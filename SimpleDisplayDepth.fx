@@ -23,16 +23,16 @@ float3 PS_DisplayDepth(float4 position : SV_Position, float2 texcoord : TEXCOORD
 {
     // defines far plane distance and near plane distance
     float f = FAR_PLANE;
-	float n = NEAR_PLANE;
+    float n = NEAR_PLANE;
 
     // get the depth value at the texture coordinate
-	float depth = GetDepth(texcoord);
+    float depth = GetDepth(texcoord);
 
     // linearize depth
-	depth = lerp(n, f, depth);
+    depth = lerp(n, f, depth);
     
     // normalize depth
-	return depth / (f - n);
+    return depth / (f - n);
 }
 
 technique DisplayDepth
