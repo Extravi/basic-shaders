@@ -10,6 +10,9 @@ float4 PS_DisplayDepth(float4 position : SV_Position, float2 texcoord : TEXCOORD
     // get the depth value at the texture coordinate
     float depth = GetDepth(texcoord);
 
+    // depths scale value
+    depth *= 0.2;
+
     // convert the depth value to a color
     // use the depth value for (RGB)
     float3 depth_color = float3(depth, depth, depth);
